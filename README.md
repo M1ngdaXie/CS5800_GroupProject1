@@ -1,6 +1,7 @@
 # CS5800_GroupProject1
 
 # Algorithms to implement and analyze:
+
 1) 215. Kth Largest Element in an Array 
 2) 347. Top K Frequent Elements
 
@@ -146,5 +147,3 @@ Upload the following to **Gradescope**:
 | Overall Evaluation      | 3      |
 
 ---
-
-Let me know if you want a downloadable `.md` version or if you’d like to format it for a course website or syllabus!
