@@ -1,7 +1,7 @@
 from typing import List
 
 
-class Solution:
+class Solution1:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
         count = {}
         for n in nums:
@@ -10,6 +10,6 @@ class Solution:
         return [item[0] for item in sorted_items[:k]]
 
 
-solution = Solution()
+solution = Solution1()
 print(solution.topKFrequent([1, 1, 1, 2, 2, 3], 2))
 print(solution.topKFrequent([1], 1))
