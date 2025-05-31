@@ -2,7 +2,7 @@ from typing import List
 import heapq
 
 
-class Solution:
+class Solution3:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
         # Count frequencies
         count = {}

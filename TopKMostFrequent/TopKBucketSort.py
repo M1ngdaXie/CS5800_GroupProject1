@@ -1,7 +1,7 @@
 from typing import List
 
 
-class Solution:
+class Solution2:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
         count = {}
         freq = [[] for i in range(len(nums) + 1)]
@@ -21,6 +21,6 @@ class Solution:
                     return res
 
 
-solution = Solution()
+solution = Solution2()
 print(solution.topKFrequent([1, 1, 1, 2, 2, 3], 2))
 print(solution.topKFrequent([1], 1))
