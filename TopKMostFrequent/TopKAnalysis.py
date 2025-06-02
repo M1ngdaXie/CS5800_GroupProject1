@@ -34,9 +34,9 @@ for size in input_sizes:
 
 
 plt.figure(figsize=(10, 6))
-plt.plot(input_sizes, times1, label="Sort-based (O(n log n))", marker='o')
-plt.plot(input_sizes, times2, label="Bucket Sort (O(n))", marker='o')
-plt.plot(input_sizes, times3, label="Heap-based (O(n log k))", marker='o')
+plt.plot(input_sizes, times1, label="Sort-based (O(n log n))", marker="o")
+plt.plot(input_sizes, times2, label="Bucket Sort (O(n))", marker="o")
+plt.plot(input_sizes, times3, label="Heap-based (O(n log k))", marker="o")
 plt.xlabel("Input Size (n)")
 plt.ylabel("Execution Time (seconds)")
 plt.title("Top K Frequent Elements: Timing Analysis")
