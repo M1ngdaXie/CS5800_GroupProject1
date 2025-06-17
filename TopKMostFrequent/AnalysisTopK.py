@@ -8,7 +8,7 @@ import time
 import matplotlib.pyplot as plt
 import random
 import sys
-from TopKMostFrequent.TopKSolutions import Solution1, Solution2, Solution3
+from TopKSolutions import Solution1, Solution2, Solution3
 
 
 def generate_test_data(size, unique_ratio):
