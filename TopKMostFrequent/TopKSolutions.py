@@ -59,3 +59,54 @@ class Solution3:
         # Use min heap to efficiently get top k elements
         # heapq.nlargest automatically handles the heap operations
         return heapq.nlargest(k, count.keys(), key=lambda x: count[x])
+
+
+def main():
+    # main function used to test implementations
+    # Initialize solution instances
+    sol1 = Solution1()
+    sol2 = Solution2()
+    sol3 = Solution3()
+
+    # Test Case 1: Basic case
+    basic_case = [1, 1, 1, 2, 2, 3]
+    k1 = 2
+
+    results_match1 = (
+        set(sol1.topKFrequent(basic_case, k1))
+        == set(sol2.topKFrequent(basic_case, k1))
+        == set(sol3.topKFrequent(basic_case, k1))
+    )
+
+    # Test Case 2: Single element
+    single_case = [1]
+    k2 = 1
+
+    results_match2 = (
+        set(sol1.topKFrequent(single_case, k2))
+        == set(sol2.topKFrequent(single_case, k2))
+        == set(sol3.topKFrequent(single_case, k2))
+    )
+
+    # Test Case 3: Larger dataset with negative numbers
+    complex_case = [4, 1, -1, 2, -1, 2, 3, 4, 4, 4]
+    k3 = 2
+
+    results_match3 = (
+        set(sol1.topKFrequent(complex_case, k3))
+        == set(sol2.topKFrequent(complex_case, k3))
+        == set(sol3.topKFrequent(complex_case, k3))
+    )
+
+    # Print results
+    print(f"Test 1 - Basic case {basic_case}, k={k1}: {results_match1}")
+    print(f"Test 2 - Single element {single_case}, k={k2}: {results_match2}")
+    print(f"Test 3 - Complex case {complex_case}, k={k3}: {results_match3}")
+
+    print("-" * 50)
+    if results_match1 and results_match2 and results_match3:
+        print("✅ ALL TESTS PASSED! All solutions return equivalent results.")
+
+
+if __name__ == "__main__":
+    main()
