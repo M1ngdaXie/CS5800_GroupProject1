@@ -1,149 +1,143 @@
-# CS5800_GroupProject1
+# Coding Files Usage Guide
 
-# Algorithms to implement and analyze:
+**Group 6 - Divide and Conquer**  
+George Lin, Minda Xie, Andrew Li, Xiaoti Hu
 
-1) 215. Kth Largest Element in an Array 
-2) 347. Top K Frequent Elements
+This repository contains implementations and performance analysis for two algorithmic problems: **Top K Frequent Elements** and **Wiggle Sort II**. Both analyses compare multiple algorithmic approaches and generate performance visualizations.
 
-# Group Projects Overview
-
-The group projects are your chance to explore in-depth an algorithm or concept related to the topics being taught in the corresponding section of the course. Please read the group project instructions completely before starting.
-
----
-
-## 📌 Tasks
-
-### Group Development and Topic Selection
-
-* You must work in a **group of 4 people** for these projects.
-* Your group **does not need** to be in a single location or in the same individual presentation section (i.e., alpha/beta).
-* If you selected a preference for choosing your own group, you are responsible for that.
-* If you chose to be assigned to a group, your group members will be assigned randomly.
-* If you have any specific preferences or requests, please email the professor as soon as possible.
-
-### Approved Project Areas
-
-The first group project will focus on algorithms or problems in the following areas:
-
-* Cryptography
-* Arithmetic, Primality, and Factoring
-* Divide and Conquer Algorithms
-* Graph Search
-* Shortest Path Algorithms on General or Directed Graphs
-
-**Instructions:**
-
-* Select a general topic.
-* Identify **two specific problems or tasks** within that concept.
-* Recommended: pick two **medium or hard problems** from [Leetcode](https://leetcode.com) or select problems from the textbook not covered in class.
+## Table of Contents
+- [Top K Frequent Elements Analysis](#top-k-frequent-elements-analysis)
+  - [Quick Start](#top-k-quick-start)
+  - [Usage](#top-k-usage)
+  - [Examples](#top-k-examples)
+  - [Files](#top-k-files)
+- [Wiggle Sort II Analysis](#wiggle-sort-ii-analysis)
+  - [Quick Start](#wiggle-quick-start)
+  - [Usage](#wiggle-usage)
+  - [Examples](#wiggle-examples)
+  - [Files](#wiggle-files)
 
 ---
 
-### 📥 Team and Idea Submission (DONE)
+## Top K Frequent Elements Analysis
 
-**Due: Monday 05/19/25**
-Submit via **Gradescope** a 1-page PDF that includes:
+Compares three algorithms for finding the top K most frequent elements in an array:
+- **Sort-based**: O(n log n) time complexity
+- **Bucket Sort**: O(n) time complexity
+- **Heap-based**: O(n log k) time complexity
 
-* Team member names
-* Description of your concept and problems
-* Inputs and outputs for each problem
-* Citation of the source(s) of the problems
+### Top K Quick Start
 
----
+```bash
+python(3) AnalysisTopK.py
+```
 
-### ⚙️ Algorithm Development
+This runs the analysis with default settings and displays interactive matplotlib graphs comparing all three algorithms.
 
-* Implement your algorithm in a language of your choice.
-* Include any special data structures required by the algorithm.
-* You may use standard built-in types (e.g., lists, dictionaries).
-* For advanced functions (e.g., NumPy SVD), appropriate libraries may be used—**acknowledge all packages**.
-* Your code must be able to **accept any correct input**.
+### Top K Usage
 
-  * Use a file or command line argument (not hard-coded).
-* Code should be **well-documented**, with:
+```bash
+python(3) AnalysisTopK.py [uniqueness_level] [sizes] [k]
+```
 
-  * A header with team member names
-  * Appropriate in-line comments
+#### Parameters
+- `uniqueness_level`: Data uniqueness level
+  - `1` = 10% unique values
+  - `2` = 50% unique values  
+  - `3` = 90% unique values
+- `sizes`: Input array sizes (comma-separated) or "default"
+- `k`: Number of top elements to find (default: 100)
 
----
+### Example Command-line calls
 
-### ⏱️ Algorithm Timing
+```bash
+# Show all scenarios with default settings
+python TopKAnalysisEnhanced.py
 
-Perform timing analysis of your algorithm and include in your report:
+# Test 50% uniqueness with default sizes and k=100
+python TopKAnalysisEnhanced.py 2
 
-* Theoretical **Big-O complexity**
-* **Graph of actual performance** (empirical analysis)
-* Measure only your algorithm (not input reading time)
+# Test 10% uniqueness with custom sizes and k=100  
+python TopKAnalysisEnhanced.py 1 1000,5000,10000
 
----
+# Test 90% uniqueness with default sizes and k=50
+python TopKAnalysisEnhanced.py 3 default 50
 
-### 📝 Report
+# Full custom: 50% uniqueness, custom sizes, k=25
+python TopKAnalysisEnhanced.py 2 500,2000,8000 25
 
-Submit a **short report** (no page limit) with the following:
+# Help
+python TopKAnalysisEnhanced.py --help
+```
 
-* Description of the overall concept
-* Description of the two selected problems
-* Your algorithms for each problem
-* Complexity analysis
-* Example of each problem being solved
-* Timing results (theoretical + empirical)
-* Project reflection (what worked, what didn’t, what to change)
-* Acknowledgements
-* Citations (use a standard format)
+### Top K Files
 
-Submit the report as a **PDF** with your final project.
-
----
-
-### 🎤 Presentation
-
-Prepare a **10-minute presentation**. Presentations will occur on:
-
-* **June 4th or June 11th (during class time)**
-* **All team members must participate**
-
-Your presentation should include:
-
-* Brief identification of the overall concept
-* Identification of the two problems
-* Detailed presentation of **one** of the problems
-* Timing and complexity results
-* (Optional) Second problem solution (if time allows)
-
-Submit a **PDF of your slides** along with your final project.
+- `AnalysisTopK.py` - Main analysis script
+- `TopKSolutions.py` - Algorithm implementations
+- Results displayed as interactive matplotlib graphs
 
 ---
 
-### 🤝 Teamwork Summary
+## Wiggle Sort II Analysis
 
-Along with your other materials, submit a **1-page PDF** describing each team member’s contribution.
+Compares three algorithms for wiggle sorting (arranging array so that `nums[0] < nums[1] > nums[2] < nums[3]...`):
+- **Brute-force**: Simple sorting approach
+- **Divide & Conquer**: O(n)-time median partitioning implementation
+- **Greedy**: Interleaving-based approach
+
+### Wiggle Quick Start
+
+```bash
+python(3) WiggleSortII_Analysis.py
+```
+
+This generates runtime plots for all three algorithms and saves the output as `wiggleSort_Result_RealTime.png`.
+
+### Wiggle Usage
+
+```bash
+python(3) WiggleSortII_Analysis.py --ratios [uniqueness_level] --sizes [sizes]
+```
+
+#### Parameters
+- `uniqueness_level`: Uniqueness level of array values
+  - Float values between 0 and 1 (e.g., 0.1 for 10%, 0.5 for 50%, 0.9 for 90%)
+  - Can specify multiple values
+- `sizes`: Comma-separated list of input sizes or "default"
+  - Default sizes: [1000, 5000, 10000]
+
+### Wiggle Examples
+
+```bash
+# Run with default settings
+python(3) WiggleSortII_Analysis.py
+
+# Run with custom uniqueness levels
+python(3) WiggleSortII_Analysis.py --ratios 0.2 0.8
+
+# Run with custom input sizes
+python(3) WiggleSortII_Analysis.py --sizes 2000 6000 10000
+
+# Customize both parameters
+python(3) WiggleSortII_Analysis.py --ratios 0.1 0.5 0.9 --sizes 500 1000 2000
+```
+
+### Wiggle Files
+
+- `WiggleSortII_Analysis.py` - Main analysis script
+- `Brute_Force.py` - Brute-force wiggle sort implementation
+- `Divide_and_Conquer.py` - O(n)-time median partitioning implementation
+- `Greedy.py` - Greedy interleaving-based approach
+- `wiggleSort_Result_RealTime.png` - Runtime analysis results
+- `WiggleSortII_TimeAnalysis.png` - Generated output for report
 
 ---
 
-## 📤 Submission Checklist
+## Libraries & Set up
 
-Upload the following to **Gradescope**:
+1. Ensure you have Python3 and matplotlib installed
+2. Clone this repository
+3. Run either analysis script with your desired parameters
+4. View the generated performance graphs to compare algorithmic approaches
 
-* Report (`.pdf`)
-* Presentation Slides (`.pdf`)
-* Teamwork Document (`.pdf`)
-* Readme (`.txt`)
-* Code
-
-**Important:** Do not upload an entire directory. Only upload the listed files.
-
-**Due: Friday, June 13th**
-
----
-
-## ✅ Rubric (Total: 30 Points)
-
-| Category                | Points |
-| ----------------------- | ------ |
-| Code and Implementation | 13     |
-| Report                  | 6      |
-| Presentation            | 6      |
-| Team Review             | 2      |
-| Overall Evaluation      | 3      |
-
----
+For questions or issues, please refer to the individual script help documentation using the `--help` flag.
