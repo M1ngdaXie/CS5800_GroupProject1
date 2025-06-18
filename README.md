@@ -3,7 +3,7 @@
 **Group 6 - Divide and Conquer**  
 George Lin, Minda Xie, Andrew Li, Xiaoti Hu
 
-This repository contains implementations and performance analysis for two algorithmic problems: **Top K Frequent Elements** and **Wiggle Sort II**. Both analyses compare multiple algorithmic approaches and generate performance visualizations.
+This document contains instructions on how to run the analysis on the following algorithms: **Top K Frequent Elements** and **Wiggle Sort II**. Both analyses compare multiple algorithmic approaches and generate performance visualizations.
 
 ## Table of Contents
 - [Top K Frequent Elements Analysis](#top-k-frequent-elements-analysis)
@@ -136,7 +136,7 @@ python(3) WiggleSortII_Analysis.py --ratios 0.1 0.5 0.9 --sizes 500 1000 2000
 ## Libraries & Set up
 
 1. Ensure you have Python3 and matplotlib installed
-2. Clone this repository
+2. Clone this repository or download associated code files
 3. Run either analysis script with your desired parameters
 4. View the generated performance graphs to compare algorithmic approaches
 
